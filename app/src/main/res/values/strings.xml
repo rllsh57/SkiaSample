@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">OpenSLTest</string>
+    <string name="label_play">Play</string>
+</resources>

@@ -1,0 +1,5 @@
+TODO list:
+
+1. Create task for javah
+2. Setup separate modules for skia and system_core
+3. Set ndk-build output to ./app/build

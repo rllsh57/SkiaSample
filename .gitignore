@@ -1,0 +1,8 @@
+.gradle
+.idea
+local.properties
+build
+/captures
+*.iml
+/app/src/main/libs
+/app/src/main/objs
