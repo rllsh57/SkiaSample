@@ -5,4 +5,4 @@ build
 /captures
 *.iml
 /app/src/main/libs
-/app/src/main/objs
+/app/src/main/obj
