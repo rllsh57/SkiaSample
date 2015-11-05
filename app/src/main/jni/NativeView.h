@@ -6,5 +6,5 @@
 class NativeView
 {
 public:
-    static void draw(JNIEnv *jniEnv, jobject bitmap);
+    virtual void draw(JNIEnv *jniEnv, jobject bitmap);
 };

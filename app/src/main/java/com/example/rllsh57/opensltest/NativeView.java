@@ -16,28 +16,38 @@ public class NativeView extends View {
 
     private static final String TAG = NativeView.class.getSimpleName();
 
+    private long mCppInstance;
+
     public NativeView(Context context) {
         super(context);
-        initialize();
+        NativeView();
     }
 
     public NativeView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        initialize();
+        NativeView();
     }
 
-    private void initialize() {
+    private void NativeView() {
         setDrawingCacheEnabled(true);
+        mCppInstance = nativeInit();
+    }
+
+    @Override
+    protected void finalize() {
+        nativeFree(mCppInstance);
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
         Bitmap bitmap = getDrawingCache();
-        nativeDraw(bitmap);
+        nativeDraw(mCppInstance, bitmap);
         canvas.drawBitmap(bitmap, 0, 0, null);
     }
 
-    private native void nativeDraw(Bitmap bitmap);
+    private native long nativeInit();
+    private native void nativeFree(long instance);
+    private native void nativeDraw(long instance, Bitmap bitmap);
 
     static {
         System.loadLibrary("opensltest");

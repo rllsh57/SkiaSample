@@ -165,11 +165,27 @@ extern "C" {
 #define com_example_rllsh57_opensltest_NativeView_VISIBLE 0L
 /*
  * Class:     com_example_rllsh57_opensltest_NativeView
+ * Method:    nativeInit
+ * Signature: ()J
+ */
+JNIEXPORT jlong JNICALL Java_com_example_rllsh57_opensltest_NativeView_nativeInit
+  (JNIEnv *, jobject);
+
+/*
+ * Class:     com_example_rllsh57_opensltest_NativeView
+ * Method:    nativeFree
+ * Signature: (J)V
+ */
+JNIEXPORT void JNICALL Java_com_example_rllsh57_opensltest_NativeView_nativeFree
+  (JNIEnv *, jobject, jlong);
+
+/*
+ * Class:     com_example_rllsh57_opensltest_NativeView
  * Method:    nativeDraw
- * Signature: (Landroid/graphics/Bitmap;)V
+ * Signature: (JLandroid/graphics/Bitmap;)V
  */
 JNIEXPORT void JNICALL Java_com_example_rllsh57_opensltest_NativeView_nativeDraw
-  (JNIEnv *, jobject, jobject);
+  (JNIEnv *, jobject, jlong, jobject);
 
 #ifdef __cplusplus
 }
